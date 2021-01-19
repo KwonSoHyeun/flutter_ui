@@ -5,62 +5,58 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // 매트리얼앱을 생성하여 반환
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        title: 'Flutter Layout Demo',
+        theme: ThemeData(
+          // 앱의 테마 설정
+          primarySwatch: Colors.blue,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text("Flutter layout demo"),
+            ),
+            body: listSection()));
+  }
+
+  Widget listSection() {
+    return ListView(children: <Widget>[
+      Container(
+          margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+          child: Column(children: <Widget>[
+            Container(
+              height: 50,
+              decoration: BoxDecoration(color: Colors.amber),
+              child: Center(
+                child: Text(
+                  "Action1",
+                  style: TextStyle(
+                      color: Colors.blueGrey,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          ])),
+      Container(
+          margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+          child: Column(children: <Widget>[
+            Container(
+              height: 50,
+              decoration: BoxDecoration(color: Colors.amber),
+              child: Center(
+                child: Text(
+                  "Other",
+                  style: TextStyle(
+                      color: Colors.blueGrey,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          ]))
+    ]);
   }
 }
