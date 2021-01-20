@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_application/src/route/secondpage.dart';
+import 'package:flutter_ui_application/src/row/row_widget.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -14,6 +15,16 @@ class HomePage extends StatelessWidget {
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => SecondRoute()));
+            },
+          ),
+          ListTile(
+            title: Text("Row widget"),
+            subtitle: Text("가로 배열 레이아웃입니다."),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RowWidgetMainAxisAlignment()));
             },
           ),
           ListTile(
