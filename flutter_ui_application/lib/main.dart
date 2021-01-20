@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:flutter_ui_application/src/home/splash.dart';
+=======
+import 'src/route/secondpage.dart';
+import 'src/row/row_widget.dart';
+>>>>>>> develop
 
 void main() => runApp(MyApp());
 
@@ -21,6 +26,8 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return SplashScreen();
+
   }
 }
