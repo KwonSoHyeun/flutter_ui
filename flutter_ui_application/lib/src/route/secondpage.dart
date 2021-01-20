@@ -12,6 +12,10 @@ class SecondRoute extends StatelessWidget {
         ),
         home: Scaffold(
           appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
             title: Text('Second Route'),
           ),
           body: Center(
