@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'src/route/secondpage.dart';
+import 'src/row/row_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,9 +35,21 @@ class HomePage extends StatelessWidget {
             },
           ),
           ListTile(
+            title: Text("Row widget"),
+            subtitle: Text("가로 배열 레이아웃입니다."),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RowWidgetMainAxisAlignment()));
+            },
+          ),
+
+          //
+          ListTile(
             title: Text("Other menus"),
             onTap: () {},
-          )
+          ),
         ].map((child) {
           return Card(
             child: child,
@@ -46,46 +59,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-// Scaffold(
-//     appBar: AppBar(
-//       title: Text("Flutter layout demo"),
-//     ),
-//     body: Column(children: <Widget>[
-//       Container(
-//         margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
-//         child: RaisedButton(
-//           color: Colors.blueGrey[300],
-//           child: Text(
-//             "Cloud Firestore",
-//             style: TextStyle(color: Colors.white),
-//           ),
-//           onPressed: () {
-//             //Navigator.push(context,
-//             //   MaterialPageRoute(builder: (context) => SecondRoute()));
-
-//             Navigator.of(context).push(
-//                 MaterialPageRoute(builder: (context) => SecondRoute()));
-//           },
-//         ),
-//       ),
-//       Container(
-//           margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
-//           child: Column(children: <Widget>[])),
-//       Container(
-//           margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
-//           child: Column(children: <Widget>[
-//             Container(
-//               height: 50,
-//               decoration: BoxDecoration(color: Colors.amber),
-//               child: Center(
-//                 child: Text(
-//                   "Other",
-//                   style: TextStyle(
-//                       color: Colors.blueGrey,
-//                       fontSize: 18,
-//                       fontWeight: FontWeight.bold),
-//                 ),
-//               ),
-//             ),
-//           ]))
-//     ])));
