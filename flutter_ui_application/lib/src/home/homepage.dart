@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_application/src/route/secondpage_param.dart';
 import 'package:flutter_ui_application/src/route/secondpage.dart';
 import 'package:flutter_ui_application/src/row/row_widget.dart';
 import 'package:flutter_ui_application/src/row/row_crossaxisalign.dart';
 import 'package:flutter_ui_application/src/row/flex_widget.dart';
 
 class HomePage extends StatelessWidget {
+  final String fruits = "Bananas";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +20,16 @@ class HomePage extends StatelessWidget {
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => SecondRoute()));
+            },
+          ),
+          ListTile(
+            title: Text("Page 이동 with param"),
+            subtitle: Text("다른 페이지로의 인자값 전달 테스트입니다."),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SecondRouteParam(fruits)));
             },
           ),
           ListTile(
