@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_application/src/route/secondpage.dart';
 import 'package:flutter_ui_application/src/row/row_widget.dart';
+import 'package:flutter_ui_application/src/row/row_crossaxisalign.dart';
+import 'package:flutter_ui_application/src/row/flex_widget.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -19,7 +21,7 @@ class HomePage extends StatelessWidget {
           ),
           ListTile(
             title: Text("Row widget"),
-            subtitle: Text("가로 배열 레이아웃입니다."),
+            subtitle: Text("가로 배열 레이아웃내 좌우, 간격 정렬입니다."),
             onTap: () {
               Navigator.push(
                   context,
@@ -28,9 +30,21 @@ class HomePage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text("Other menus"),
-            onTap: () {},
-          )
+              title: Text("Row widget alignment"),
+              subtitle: Text("가로 배열 레이아웃 상하 정렬입니다."),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => RowWidgetCrossAxisAlignment()));
+              }),
+          ListTile(
+              title: Text("Flex widget alignment"),
+              subtitle: Text("가로, 세로 비율 정렬입니다."),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ExpandedWidget()));
+              })
         ].map((child) {
           return Card(
             child: child,

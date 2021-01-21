@@ -4,30 +4,32 @@ import 'package:flutter/material.dart';
 class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Flutter Layout Demo sub',
-        theme: ThemeData(
-          // 앱의 테마 설정
-          primarySwatch: Colors.blue,
-        ),
-        home: Scaffold(
-          appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back, color: Colors.white),
-              onPressed: () => Navigator.of(context).pop(),
+    return Scaffold(
+      appBar: AppBar(title: Text("Second Screen")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              height: 70,
+              width: 250,
+              decoration: BoxDecoration(color: Colors.indigoAccent),
+              alignment: Alignment(0, 0),
+              child: Text(
+                "This is the Second Screen",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
             ),
-            title: Text('Second Route'),
-          ),
-          body: Center(
-            // RiasedButton을 등록
-            child: RaisedButton(
-              child: Text('Go back!'),
+            RaisedButton(
+              child: Text("Go back to First Screen"),
               onPressed: () {
-                // 버튼이 눌렸을 때 처리
-                Navigator.pop(context); // 현재 라우트를 pop하여 제거함
+                Navigator.pop(context);
               },
             ),
-          ),
-        ));
+          ],
+        ),
+      ),
+    );
   }
 }

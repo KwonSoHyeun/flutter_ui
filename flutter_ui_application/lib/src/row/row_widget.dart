@@ -9,6 +9,9 @@ class RowWidgetMainAxisAlignment extends StatelessWidget {
         children: <Widget>[
           Text("Default (MainAxisAlignment.start)"),
           Container(
+            decoration: BoxDecoration(
+                color: Colors.grey[200],
+                border: Border.all(color: Colors.indigo, width: 0.5)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
