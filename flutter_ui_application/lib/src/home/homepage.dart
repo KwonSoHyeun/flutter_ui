@@ -7,7 +7,7 @@ import 'package:flutter_ui_application/src/row/row_crossaxisalign.dart';
 import 'package:flutter_ui_application/src/row/flex_widget.dart';
 
 class HomePage extends StatelessWidget {
-  final String fruits = "Strawberry4";
+  final String fruits = "Strawberry7";
 
   @override
   Widget build(BuildContext context) {
