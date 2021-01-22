@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_application/src/message/alert.dart';
 import 'package:flutter_ui_application/src/route/secondpage_param.dart';
 import 'package:flutter_ui_application/src/route/secondpage.dart';
 import 'package:flutter_ui_application/src/row/row_widget.dart';
@@ -57,6 +58,13 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ExpandedWidget()));
+              }),
+          ListTile(
+              title: Text("Alert Dialog"),
+              subtitle: Text("alert dialog 띄우기입니다."),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AlertDialogDemo()));
               })
         ].map((child) {
           return Card(
